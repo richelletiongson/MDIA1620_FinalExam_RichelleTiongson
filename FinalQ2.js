@@ -24,7 +24,7 @@ PLANNING:
 1) When user command is "status", then using a for loop, loop through all the modes in badge and display each mode with their current points. 
 
 2) When user command is "add", then using another for loop, loop through all the modes in badge and if the mode is equal to the mode the user wants to add to,
-then add 1 to the current point within that mode (increment by 1).
+then add 1 to the current point within that mode (increment by 1). 
 
 CHALLENGE 1
 
