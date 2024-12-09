@@ -21,6 +21,20 @@ CHALLENGE 2
 
 PLANNING:
 
+1) When user command is "status", then using a for loop, loop through all the modes in badge and display each mode with their current points. 
+
+2) When user command is "add", then using another for loop, loop through all the modes in badge and if the mode is equal to the mode the user wants to add to,
+then add 1 to the current point within that mode (increment by 1).
+
+CHALLENGE 1
+
+Using for loop, loop through all the modes in badge and in every loop the current points of the mode within that loop will be added to the points total. 
+Then using if else statement, console log the messages corresponding to the point increments found above in the instructions. 
+
+CHALLENGE 2
+
+For each mode multiply the points with the amount of letters that spell out that mode. This will be included when calculating points in the AddPoints function.
+
 */
 
 let badge = {
