@@ -49,7 +49,11 @@ let badge = {
 
 //rename this to ShowStatus
 function ShowStatus(){
+  for(let key in badge){
+    console.log(key,": ", badge[key])
+  }
   //loop through the badge and log all the mode and all their corresponding points
+  StartApp();
 }
 
 //rename this to AddPoints
