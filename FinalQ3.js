@@ -11,6 +11,10 @@ When a color is toggled from true to false, also remove the color from userColor
 
 PLANNING:
 
+The set of colors in the theme is the only available colors, users can add colors but only if it is a color in the theme and it is true. 
+If the color they wish to add is in the theme color and true, push to userColors, if not then console log "Not allowed."
+If they toggle the color from true to false then for loop through all userColors and only the ones that are true will be pushed into the new array. 
+New array will then be reassigned to userColors after. 
 */
 
 let userColors = [];
