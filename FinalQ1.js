@@ -19,7 +19,7 @@ When VIP is not false, when the notify function is called, only the VIP will get
 PLANNING:
 1) Using readline.question ask for the customer's age. Then push the age they state in the array "registry", this will resgister
 and keep note of the customer's age.
-2) Using NotifyAll function, if alcohol settings is false then everyone will be notified "Everyone is welcome in here". Else if alcohol settings is true then those under 19 will be notified "You are not allowed in here", 
+2) Using NotifyAll function, if alcohol settings is false then everyone will be notified "Everyone is welcome in here". Else if alcohol settings is true then using a for loop all those under 19 will be notified "You are not allowed in here", 
 if the customer is 19 and above they will be notified "You are allowed to drink in here".
 
 CHALLENGE 1
@@ -34,7 +34,6 @@ using NotifyAll function "Sorry the store is not available today." If the comman
 let registry = [];
 let settings = {
   alcohol: true
-  
   //alcohol setting goes here
 };
 
@@ -42,9 +41,8 @@ let settings = {
 function RegisterUser(){
   readline.question("What is your age?", _newUserAge =>{
     registry.push(_newUserAge);
-  }
-)
-
+  })
+  StartApp();
   //ask for the age with readline
 }
 
@@ -57,8 +55,19 @@ function ToggleAlcohol(){
 
 //rename this to NotifyAll
 function NotifyAll(){
-
-
+  if (settings.alcohol === false){
+    console.log("Everyone is welocome in here.")
+  } 
+  if (settings.alcohol === true){
+    for(let i=0; i<registry.length; i++ ){
+      if (registry[i]<19){
+        console.log("You are not allowed in here.")
+      } else if (registry[i]>=19){
+        console.log("You are allowed to drink in here.")
+      }
+    }
+  }
+  StartApp();
   //go through the array to notify everyone
 }
 
