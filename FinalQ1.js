@@ -17,6 +17,17 @@ Make a VIP setting, and allow the user to type in an index that corresponds to t
 When VIP is not false, when the notify function is called, only the VIP will get notified. Everybody else will get console logged "sorry the store is not available today."
 
 PLANNING:
+1) Using readline.question ask for the customer's age. Then push the age they state in the array "registry", this will resgister
+and keep note of the customer's age.
+2) Using NotifyAll function, if alcohol settings is false then everyone will be notified "Everyone is welcome in here". Else if alcohol settings is true then those under 19 will be notified "You are not allowed in here", 
+if the customer is 19 and above they will be notified "You are allowed to drink in here".
+
+CHALLENGE 1
+Add age in settings, if the user command is to change age then the age originally set in settings will change and this will be the new age reflected in NotifyAll. 
+
+CHALLENGE 2
+Make a VIP setting, make it false. If the user "makes a vip" then the settings will be true and everyone will be notified
+using NotifyAll function "Sorry the store is not available today." If the commands "cancel vip" then the VIP setting will return to false.
 
 */
 
