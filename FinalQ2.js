@@ -23,7 +23,7 @@ PLANNING:
 
 1) When user command is "status", then using a for loop, loop through all the modes in badge and display each mode with their current points. 
 
-2) When user command is "add", then using another for loop, loop through all the modes in badge and if the mode is equal to the mode the user wants to add to,
+2) When user command is "add", ask user which mode they want to add to using readline.question then using another for loop, loop through all the modes in badge and if the mode is equal to the mode the user wants to add to,
 then add 1 to the current point within that mode (increment by 1). 
 
 CHALLENGE 1
@@ -58,7 +58,15 @@ function ShowStatus(){
 
 //rename this to AddPoints
 function AddPoints(){
+  readline.question("Which mode would you like to add to?", _addToMode =>{
+    for(let key in badge){
+      if(_addToMode === key){
+        badge[key] = badge[key] + 1
+      }
+    }
+  })
   //Add the point to the correct mode by capturing the readline
+  StartApp();
 }
 
 
