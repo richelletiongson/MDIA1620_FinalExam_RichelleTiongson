@@ -40,7 +40,10 @@ let settings = {
 
 //rename this to RegisterUser
 function RegisterUser(){
-
+  readline.question("What is your age?", _newUserAge =>{
+    registry.push(_newUserAge);
+  }
+)
 
   //ask for the age with readline
 }
