@@ -15,7 +15,7 @@ PLANNING:
 
 let userColors = [];
 let theme = {
-  //the 5 color and their boolean value goes here
+  //the 5 color and their boolean value goes here 
 };
 
 //rename this to AddUserColor
