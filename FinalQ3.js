@@ -18,29 +18,69 @@ New array will then be reassigned to userColors after.
 */
 
 let userColors = [];
+let temporaryUserColors = [];
 let theme = {
+  red: true,
+  green: true,
+  blue: true, 
+  yellow: true,
+  orange: true,
   //the 5 color and their boolean value goes here 
 };
 
 //rename this to AddUserColor
 function AddUserColor(){
+  readline.question("What color would you like to add", _newColor=>{
+    for(let key in theme){
+      if(_newColor === key && theme[key] === true ){
+        userColors.push(_newColor)
+      } else {
+        console.log("This is not allowed." )
+      }
+    }
+  })
   //add a color to userColors
+  DisplayUserColors();
+  StartApp();
 }
 
 //rename this to DisplayUserColors
 function DisplayUserColors(){
+  console.log("Here are your current User Colors: ")
+  for(let i=0; i<userColors; i++){
+    console.log(userColors[i])
+  }
   //add a color to userColors
 }
 
 //rename this to ToggleThemeColor
 function ToggleThemeColor(){
+  readline.question("What color would you like to toggle?", _toggleColor =>{
+    
+    for(let key in theme)
+    if (_toggleColor === key){
+      theme[key] = !theme[key];
+        if (theme[key] === true) {
+        temporaryUserColors.push(key, theme[key]);
+        } 
+    }
+    temporaryUserColors = userColors;
+  })
   //ask for a color to toggle
+  DisplayUserColors();
+  StartApp();
 }
 
 
 function StartApp(){
   readline.question("What is your command? ", _command=>{
-    if(_command === "quit"){
+    if(_command === "add color"){
+      AddUserColor();
+    } else if (_command === "display colors"){
+      DisplayUserColors();
+    } else if (_command === "toggle theme colors") {
+      ToggleThemeColor();
+    } else if (_command === "quit"){
       readline.close();
     } else{
       StartApp();
