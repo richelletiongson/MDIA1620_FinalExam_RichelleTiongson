@@ -47,6 +47,24 @@ let badge = {
   //modes go here
 };
 
+function MakeBadge(){       //This is challenge 1
+  let addedPoints = 0;
+  for (let key in badge){
+    addedPoints.add(badge[key])
+  }
+  if (addedPoints < 10){
+    console.log("horrible newbie")
+  } else if (addedPoints >= 10 && addedPoints < 20){
+    console.log("adventurer")
+  } else if (addedPoints >=20 && addedPoints < 30){
+    console.log("slayer")
+  } else if (addedPoints >=30 && addedPoints < 40){
+    console.log("divined")
+  } else if (addedPoints >= 40){
+    console.log("eternal")
+  }
+}
+
 //rename this to ShowStatus
 function ShowStatus(){
   for(let key in badge){
@@ -61,7 +79,8 @@ function AddPoints(){
   readline.question("Which mode would you like to add to?", _addToMode =>{
     for(let key in badge){
       if(_addToMode === key){
-        badge[key] = badge[key] + 1
+        badge[key] = badge[key] + 1;
+        badge[key] = badge[key] * key.length; //This is challenge 2
       }
     }
   })
@@ -72,9 +91,15 @@ function AddPoints(){
 
 function StartApp(){
   readline.question("What is your command? ", _command=>{
-    if(_command === "quit"){
+    if(_command === "add points"){
+      AddPoints();
+    } else if (_command === "show status"){
+      ShowStatus();
+    } else if (_command === "show badge"){
+      MakeBadge();
+    } else if (_command === "quit"){
       readline.close();
-    } else{
+    } else {
       StartApp();
     }
   })
