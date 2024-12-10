@@ -33,9 +33,25 @@ using NotifyAll function "Sorry the store is not available today." If the comman
 
 let registry = [];
 let settings = {
-  alcohol: true
+  alcohol: true,
+  age: 19
   //alcohol setting goes here
 };
+
+ChangeAge(){
+readline.question("What age would you like to change", => _newAge{
+  settings.alcohol[key] = _newAge
+})
+StartApp();
+}
+MakeVip(){
+
+StartApp();
+}
+CancelVip(){
+
+StartApp();
+}
 
 //rename this to RegisterUser
 function RegisterUser(){
@@ -48,9 +64,9 @@ function RegisterUser(){
 
 //rename this to ToggleAlcohol
 function ToggleAlcohol(){
-
-
+  settings.alcohol[key] = !settings.alcohol[key]
   //toggle alcohol setting
+  StartApp();
 }
 
 //rename this to NotifyAll
@@ -73,7 +89,19 @@ function NotifyAll(){
 
 function StartApp(){
   readline.question("What is your command? ", _command=>{
-    if(_command === "quit"){
+    if(_command === "toggle alcohol"){
+      ToggleAlcohol();
+    } else if (_command === "notify all"){
+      NotifyAll();
+    } else if (_command === "register user"){
+      RegisterUser();
+    } else if (_command === "change age"){
+      ChangeAge();
+    } else if (_command === "make vip"){
+      MakeVip();
+    } else if (_command === "cancel vip"){
+      CancelVip();
+    } else if (_command === "quit"){
       readline.close();
     } else{
       StartApp();
